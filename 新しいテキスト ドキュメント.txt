@@ -1,0 +1,3 @@
+docker exec -i db psql -U postgres sma < sma
+docker container run -it -d --name db -e POSTGRES_PASSWORD=20040601 -e POSTGRES_USER=postgres -e POSTGRES_DB=sma -p 5432:5432 netvalue/postgres
+docker inspect -f '{{range.NetworkSettings.Networks}}{{.IPAddress}}{{end}}' db
